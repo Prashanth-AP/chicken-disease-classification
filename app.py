@@ -21,7 +21,8 @@ class ClientApp:
 @app.route("/", methods=['GET'])
 @cross_origin()
 def home():
-    return render_template('index.html')
+    return jsonify({"message": "Hello, Vercel!"})
+    # return render_template('index.html')
 
 
 @app.route("/train", methods=['GET','POST'])
@@ -44,5 +45,6 @@ def predictRoute():
 if __name__ == "__main__":
     clApp = ClientApp()
     app.run(host='0.0.0.0', port=8080) #local host
+    app_instance = app
     # app.run(host='0.0.0.0', port=8080) #for AWS
     #app.run(host='0.0.0.0', port=80) #for AZURE
