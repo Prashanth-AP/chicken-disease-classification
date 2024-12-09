@@ -22,7 +22,7 @@ class ClientApp:
 @cross_origin()
 def home():
     return jsonify({"message": "Hello, Vercel!"})
-    # return render_template('index.html')
+    return render_template('index.html')
 
 
 @app.route("/train", methods=['GET','POST'])
